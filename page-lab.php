@@ -1,7 +1,7 @@
 <?php
 /*
  * Template Name: Lab
- * Description: A Page Template with a darker design.
+ * Description: A Page Template with a darker design.yesy
  */
 
 //
