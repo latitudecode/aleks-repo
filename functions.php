@@ -148,4 +148,26 @@ if ( ! is_admin() )
 /* update notifier */
 if ( op_theme_opt( 'update-check' ) )
 	op_version_check();
+
+/* retrospect post type */
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( 'acme_retrospect',
+		array(
+			'labels' => array(
+				'name' => __( 'Retrospect' ),
+				'singular_name' => __( 'Retrospect' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'supports' => array('title', 'comments', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
+		)
+	);
+}
+
+
+
+
+
+
 ?>
