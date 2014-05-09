@@ -187,5 +187,4 @@ function create_posttype() {
 
 
 
-
 ?>
