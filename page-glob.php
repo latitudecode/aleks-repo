@@ -9,54 +9,83 @@
 ?>
 <?php get_header(); ?>
 
-<?php while ( have_posts() ) : ?>
+	<!-- body -->
+	<body class="blog">
+	
 
-<?php the_post(); ?>
-
-<?php
-if ( has_post_thumbnail() )
-	get_template_part( 'part', 'intro' );
-?>
 
 <!-- content -->
-<div class="content <?php echo is_page_template( 'template-wide.php' ) ? 'wide' : 'narrow'; ?>">
+<div class="content">
+
+	<!-- post list -->
+	<ul id="post-list">
 	
-	<?php if ( ! has_post_thumbnail() ) : ?>
-	
-	<!-- title -->
-	<h1 class="post-title"><?php the_title(); ?></h1>
-	
-	<!-- separator -->
-	<hr />
-	
-	<?php endif; ?>
-	
-	<!-- article -->
-	<article id="article-<?php the_ID(); ?>" class="post-content clear">
+<?php query_posts('cat=10'); if(have_posts()) : while(have_posts()) : the_post(); ?> <!-- starting the WordPress loop -->
+							
+				
+		<!-- article -->
+<li id="article-119" class="post-119 post type-post status-publish format-standard hentry category-experiments category-uncategorized tag-envato tag-themeforest has-featured">
 		
-		<?php the_content(); ?>
 		
-	</article>
-	<!-- end: article -->
+	<!-- figure -->
+	<a href="<?php the_permalink(); ?>" class="post-figure">
 	
-	<?php if ( $GLOBALS[ 'multipage' ] && ( $i = intval( $GLOBALS[ 'page' ] ) + 1 ) && $i <= $GLOBALS[ 'numpages' ] ) : ?>
+		<!-- image -->		
+		 <?php 
+                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                  the_post_thumbnail();
+                } 
+                ?>
+	</a>
+	<!-- end: figure -->
 	
-	<!-- pagination -->
-	<span class="more more-content aligncenter">
+		
+	<!-- info -->
+	<div class="post-info">
+		
+		<!-- title -->
+		<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		
+				
+		<!-- excerpt -->
+		<p><?php the_excerpt(); ?></p>
 	
-		<!-- action -->
-		<a href="<?php echo esc_url( add_query_arg( 'page', $i, get_permalink() ) ); ?>" class="action" title="<?php esc_attr_e( __( 'Read the following page', 'openframe' ) ); ?>" data-title="<?php esc_attr_e( __( 'Continue', 'openframe' ) ); ?>" data-wait="<?php esc_attr_e( __( 'Loading Page..', 'openframe' ) ); ?>"></a>
+		
+				
+		<!-- meta -->
+		<ul class="meta">
+			
+			<!-- time -->
+			<li><time datetime="2013-06-24T10:24:12+00:00">June 24, 2013</time></li>
+			
+			
+		</ul>
+		<!-- end: meta -->
+<?php endwhile; ?>
+
+<?php else : ?>
+    <p>Whoops! We are working on it.</p>
+
+<?php endif; ?> <!-- end loop -->	
+	</div>
+	<!-- end: info -->
+
+</li>
+<!-- end: article -->	
+							
+				
+	</ul>
+	<!-- end: post list -->
 	
-	</span>
-	<!-- end: pagination -->
-	
-	<?php endif; ?>
 	
 </div>
 <!-- end: content -->
 
-<?php endwhile; ?>
 
 
+<!-- bottombar -->
+
+
+		
 
 <?php get_footer(); ?>
