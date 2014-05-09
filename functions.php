@@ -165,6 +165,21 @@ function create_post_type() {
 	);
 }
 
+add_action( 'init', 'create_posttype' );
+function create_posttype() {
+	register_post_type( 'acme_laboratory',
+		array(
+			'labels' => array(
+				'name' => __( 'Laboratory' ),
+				'singular_name' => __( 'Laboratory' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'Laboratory'),
+			'supports' => array('title', 'comments', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
+		)
+	);
+}
 
 
 
