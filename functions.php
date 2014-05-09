@@ -160,8 +160,9 @@ function create_post_type() {
 			),
 		'public' => true,
 		'has_archive' => true,
-		'taxonomies' => array('category'),
+		'taxonomies' => array('category', 'post_tag'),
 		'supports' => array('title', 'comments', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
+
 		)
 	);
 }

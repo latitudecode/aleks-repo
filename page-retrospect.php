@@ -38,16 +38,31 @@
 <div class="half project">
 	<div class="half project-image">
 		<?php 
-                            if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                              the_post_thumbnail();
-                            } 
-                            ?>
+                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                  the_post_thumbnail();
+                } 
+                ?>
 		<div class="project-type"><p>Video</p></div>		
 	</div>
 <h2><?php the_title(); ?></h2>
 <p><?php the_excerpt(); ?><br /></p>
 <div class="linker">
-	<p><a href="#">↪</a></p>
+	<p><a href="<?php the_permalink() ?>">↪</a></p>
+</div>	
+</div>
+<div class="half project">
+	<div class="half project-image">
+		<?php 
+                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                  the_post_thumbnail();
+                } 
+                ?>
+		<div class="project-type"><p>Video</p></div>		
+	</div>
+<h2><?php the_title(); ?></h2>
+<p><?php the_excerpt(); ?><br /></p>
+<div class="linker">
+	<p><a href="<?php the_permalink() ?>">↪</a></p>
 </div>	
 </div>
 </div>
