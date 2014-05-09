@@ -1,3 +1,13 @@
+<?php
+/*
+ * Template Name: Books
+ * Description: A Page Template with a darker design.
+ */
+
+//
+
+?>
+
 <?php get_header(); ?>
 
 	<!-- body -->
@@ -21,7 +31,7 @@
 
 <div class="columns clear half">
 
-<?php query_posts(''); if(have_posts()) : while(have_posts()) : the_post(); ?> <!-- starting the WordPress loop -->
+<?php query_posts('cat=4'); if(have_posts()) : while(have_posts()) : the_post(); ?> <!-- starting the WordPress loop -->
 
 
 <div class="half project">
