@@ -160,6 +160,7 @@ function create_post_type() {
 			),
 		'public' => true,
 		'has_archive' => true,
+		'taxonomies' => array('category'),
 		'supports' => array('title', 'comments', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
 		)
 	);
@@ -175,6 +176,7 @@ function create_posttype() {
 			),
 			'public' => true,
 			'has_archive' => true,
+			'taxonomies' => array('category'),
 			'rewrite' => array('slug' => 'Laboratory'),
 			'supports' => array('title', 'comments', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
 		)
