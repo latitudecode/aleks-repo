@@ -23,65 +23,38 @@
 <h1>Retrospect</h1>
 
 <div class="liner"></div>
-<p><?php the_content('index.php?page_id=6'); ?></p>
+<p><?php the_content( 'index.php?page_id=6' ); ?></p>
 </div>
+
+
+
+
+<?php $loop = new WP_Query( array( 'post_type' => 'acme_retrospect', 'posts_per_page' => -1 ) ); ?>
+<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
 
 
 <div class="columns clear half">
 <div class="half project">
 	<div class="half project-image">
-		<img src="images/project-image.jpg" />
+		<?php 
+                            if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                              the_post_thumbnail();
+                            } 
+                            ?>
 		<div class="project-type"><p>Video</p></div>		
 	</div>
-<h2>Original Hooligans</h2>
-<p>Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.<br />
-<div class="linker">
-	<p><a href="#">↪</a></p>
-</div>	
-</div>
-<div class="half project">
-<div class="half project-image">
-	<img src="images/project-image.jpg" />
-		<div class="project-type"><p>Video</p></div>		
-
-</div>
-
-<h2>Pilgrims</h2>
-<p>Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.<br />
-<div class="linker">
-	<p><a href="#">↪</a></p>
-</div>	
-</div>
-</div>
-
-<div class="columns clear half">
-<div class="half project">
-<div class="half project-image">
-	<img src="images/project-image.jpg" />
-		<div class="project-type"><p>Video</p></div>		
-
-</div>
-<h2>Original Hooligans</h2>
-<p>Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.<br />
-<div class="linker">
-	<p><a href="#">↪</a></p>
-</div>	
-</div>
-<div class="half project">
-<div class="half project-image">
-	<img src="images/project-image.jpg" />
-			<div class="project-type"><p>Video</p></div>		
-</div>
-
-<h2>Pilgrims</h2>
-<p>Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.<br />
+<h2><?php the_title(); ?></h2>
+<p><?php the_excerpt(); ?><br /></p>
 <div class="linker">
 	<p><a href="#">↪</a></p>
 </div>	
 </div>
 </div>
 	
-	
+
+<?php endwhile; wp_reset_query(); ?>
+
 </div>
 <!-- end: content -->
 
