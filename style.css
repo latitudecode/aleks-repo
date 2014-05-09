@@ -3179,3 +3179,88 @@ img[class*="wp-image-"],
 	}
 
 }
+
+/* css added */
+
+.intro-text {
+    padding: 0 120px;
+    text-align: center;
+}
+.intro-text p {
+    margin-bottom: 50px;
+}
+.half.project {
+    border: 1px solid #FFFFFF;
+}
+.half .project img {
+    width: 100%;
+}
+.half.project h2 {
+    margin-bottom: 0.5em;
+}
+.linker {
+    background: none repeat scroll 0 0 #808080;
+    float: right;
+    height: 50px;
+    position: relative;
+    width: 50px;
+}
+.half.project p, .half.project h2 {
+    padding: 0 30px;
+}
+.liner {
+    border: 1px solid #FFFFFF;
+    margin: 0 auto;
+    width: 200px;
+}
+.project-type {
+    background-color: rgba(250, 250, 250, 0.8);
+    bottom: 50px;
+    color: #FFFFFF;
+    float: right;
+    height: 50px;
+    position: relative;
+    width: 200px;
+}
+.project-type p {
+    color: #808080;
+    margin-top: 10px;
+    text-align: center;
+}
+.linker > p {
+    left: -10px;
+    margin-right: 11px;
+    margin-top: 15px;
+    position: relative;
+}
+.linker p a {
+    border-bottom: 0 none;
+    padding: 0;
+    text-decoration: none;
+}
+.post-info .meta li {
+    margin-top: 15px;
+}
+.homepage-feature {
+    margin: 0 auto;
+    position: relative;
+    top: 80%;
+}
+.homepage-feature h2 {
+    font-size: 50px;
+    margin-bottom: 0;
+}
+.project-blurb {
+    padding-right: 30%;
+}
+#picks {
+}
+.homepage-project-image {
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+}
+.homepage-meta h2 {
+    margin-bottom: 0;
+}
+
